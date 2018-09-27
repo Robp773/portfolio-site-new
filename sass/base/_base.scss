@@ -1,0 +1,25 @@
+// font-family: 'Black Ops One', cursive;
+// font-family: 'Bungee Shade', cursive;
+// font-family: 'Monoton', cursive;
+// font-family: 'Rubik', sans-serif;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  position: relative;
+  background: #232526; /* fallback for old browsers */
+  background: linear-gradient(to right, #232526, #414345, #414345, #232526);
+}
