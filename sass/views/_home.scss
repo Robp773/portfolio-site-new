@@ -1,0 +1,91 @@
+.home {
+  // main parent div of text of home page
+  &__content {
+    font-family: "Rubik", sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    position: absolute;
+    color: white;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  //   title of text
+  &__name {
+    color: lightgreen;
+    font-family: "Black Ops One", cursive;
+    margin-bottom: 1rem;
+  }
+  // parent for portfolio-btn to prevent hover on/off stuttering
+  &__portfolio-btn-parent {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 27em;
+    height: 13rem;
+    &:hover {
+      height: 31rem;
+    }
+
+    &:hover :first-child {
+      height: 30rem;
+      clip-path: polygon(
+        22% 2%,
+        78% 2%,
+        78% 57%,
+        95% 57%,
+        50% 97%,
+        5% 57%,
+        22% 57%
+      );
+    }
+    // div that is slightly larger than the down arrow portfolio btn.
+    // gives a border edge when portfolio-parent-btn is hovered
+    &:hover :nth-child(2) {
+      height: 30rem;
+      width: 25rem;
+      opacity: 1;
+      clip-path: polygon(
+        20% 0,
+        80% 0,
+        80% 55%,
+        100% 55%,
+        50% 100%,
+        0 55%,
+        20% 55%
+      );
+    }
+  }
+  // btn that becomes down arrow when portfolio-btn-parent is hovered
+  &__portfolio-btn {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25rem;
+    height: 20rem;
+    font-size: 3rem;
+    background: white;
+    color: gray;
+    height: 10rem;
+    font-weight: bold;
+    transition: 0.5s all;
+    transform-origin: left;
+  }
+  // matches size of portfolio-btn until portfolio-parent-btn is hovered
+  // gives border edge to portfolio-btn
+  &__portfolio-btn-bg {
+    transition: 0.5s all;
+    opacity: 1;
+    z-index: -1;
+    background: lightgreen;
+    height: 10rem;
+    width: 25rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
