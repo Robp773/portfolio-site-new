@@ -1,7 +1,23 @@
-// font-family: 'Black Ops One', cursive;
-// font-family: 'Bungee Shade', cursive;
-// font-family: 'Monoton', cursive;
-// font-family: 'Rubik', sans-serif;
+// .btn {
+//   color: white;
+//   background: red;
+//   width: 20rem;
+//   display: inline-block;
+//   height: 5rem;
+
+//   &::before {
+//     content: "yi";
+//     display: inline-block;
+//     background: green;
+//     width: 0%;
+//     height: 5rem;
+//     transition: .75s all cubic-bezier(1, 0, 0, 1);
+//   }
+//   &:hover::before{
+//     background: blue;
+//     width: 100%;
+//   }
+// }
 
 *,
 *::after,
@@ -22,4 +38,15 @@ body {
   position: relative;
   background: #232526; /* fallback for old browsers */
   background: linear-gradient(to right, #232526, #414345, #414345, #232526);
+}
+
+.icon {
+  color: $secondary-color;
+  font-size: 10rem;
+  margin: 1rem;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }
