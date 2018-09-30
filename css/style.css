@@ -1,3 +1,43 @@
+@keyframes arrow-grow {
+  0% {
+    height: 10rem; }
+  100% {
+    height: 30rem; } }
+
+@keyframes down-arrow-color-change {
+  0% {
+    background: lightgreen;
+    color: lightgreen; }
+  100% {
+    background: white;
+    color: lightgreen; } }
+
+@keyframes link-expand {
+  0% {
+    background: lightgreen;
+    opacity: 0;
+    width: 0%;
+    height: 0%; }
+  50% {
+    opacity: 1;
+    width: 75%;
+    height: 75%; }
+  100% {
+    background: lightgreen;
+    opacity: 0;
+    width: 150%;
+    height: 150%;
+    border-radius: 100px; } }
+
+@keyframes tech-drop-off {
+  0% {
+    transform: translateY(0) rotate(0); }
+  50% {
+    opacity: 1;
+    transform: translateY(250px) rotate(60deg); }
+  100% {
+    transform: translateY(500px) rotate(140deg); } }
+
 *,
 *::after,
 *::before {
@@ -16,68 +56,154 @@ body {
   /* fallback for old browsers */
   background: linear-gradient(to right, #232526, #414345, #414345, #232526); }
 
-.home__content {
-  font-family: "Rubik", sans-serif;
-  font-size: 4rem;
-  text-align: center;
-  position: absolute;
+.icon {
   color: white;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+  font-size: 10rem;
+  margin: 1rem;
+  box-sizing: border-box; }
 
-.home__name {
-  color: lightgreen;
-  font-family: "Black Ops One", cursive;
-  margin-bottom: 1rem; }
+a {
+  text-decoration: none; }
 
-.home__portfolio-btn-parent {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 27em;
-  height: 13rem; }
-  .home__portfolio-btn-parent:hover {
-    height: 31rem; }
-  .home__portfolio-btn-parent:hover :first-child {
-    height: 30rem;
-    clip-path: polygon(22% 2%, 78% 2%, 78% 57%, 95% 57%, 50% 97%, 5% 57%, 22% 57%); }
-  .home__portfolio-btn-parent:hover :nth-child(2) {
-    height: 30rem;
-    width: 25rem;
-    opacity: 1;
-    clip-path: polygon(20% 0, 80% 0, 80% 55%, 100% 55%, 50% 100%, 0 55%, 20% 55%); }
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh; }
+  .home__content {
+    font-family: "Rubik", sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    position: absolute;
+    color: white;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content; }
+  .home__name {
+    color: lightgreen;
+    font-family: "Black Ops One", cursive;
+    margin-bottom: 1rem; }
+  .home__contact-info > a {
+    position: relative;
+    display: inline-block;
+    height: 100%; }
+  .home__contact-info > a:hover::before {
+    content: "";
+    z-index: -1;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    animation: link-expand 0.5s linear; }
+  .home__portfolio-btn-parent {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 27em;
+    height: 13rem; }
+    .home__portfolio-btn-parent:hover {
+      height: 31rem; }
+    .home__portfolio-btn-parent:hover :nth-child(n + 3):nth-child(-n + 7) {
+      color: white;
+      animation: tech-drop-off 1s linear; }
+    .home__portfolio-btn-parent:hover :first-child {
+      animation: arrow-grow 1s forwards, down-arrow-color-change 1s forwards;
+      clip-path: polygon(22% 2%, 78% 2%, 78% 57%, 95% 57%, 50% 97%, 5% 57%, 22% 57%); }
+    .home__portfolio-btn-parent:hover .text {
+      display: none; }
+    .home__portfolio-btn-parent:hover .text-2 {
+      display: block;
+      transform: rotate(90deg);
+      margin: auto;
+      animation: none !important; }
+    .home__portfolio-btn-parent:hover :nth-child(2) {
+      animation: arrow-grow 1s forwards;
+      background: lightgreen;
+      clip-path: polygon(20% 0, 80% 0, 80% 55%, 100% 55%, 50% 100%, 0 55%, 20% 55%); }
+  .home__portfolio-btn {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20rem;
+    border: 5px solid white;
+    height: 10rem;
+    font-size: 3.5rem;
+    background: lightgreen;
+    color: white;
+    height: 10rem;
+    font-weight: bold;
+    transition: 0.5s all; }
+  .home__portfolio-btn-bg {
+    transition: 0.5s all;
+    z-index: -1;
+    background: white;
+    height: 10rem;
+    width: 20rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .home__portfolio-btn-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4.5rem;
+    opacity: 0; }
+  .home__portfolio-btn-item--1 {
+    animation-delay: 0.1s !important;
+    animation-duration: 0.55s !important;
+    left: 34%; }
+  .home__portfolio-btn-item--2 {
+    animation-delay: 0.22s !important;
+    animation-duration: 0.68s !important;
+    left: 30%; }
+  .home__portfolio-btn-item--3 {
+    animation-delay: 0.45s !important;
+    animation-duration: 0.7s !important;
+    left: 55%; }
+  .home__portfolio-btn-item--4 {
+    animation-delay: 0.13s !important;
+    left: 60%; }
+  .home__portfolio-btn-item--5 {
+    animation-delay: 0.3s !important;
+    animation-duration: 0.78s !important;
+    left: 21%; }
+  .home__portfolio-btn-item--6 {
+    animation-delay: 0.6s !important;
+    animation-duration: 0.49s !important;
+    left: 35%; }
+  .home__portfolio-btn-item--7 {
+    animation-delay: 0.7s !important;
+    left: 45%; }
+  .home__portfolio-btn-item--8 {
+    animation-duration: 0.73s !important;
+    animation-delay: 0.8s !important;
+    left: 41%; }
 
-.home__portfolio-btn {
-  z-index: 1;
+.text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 25rem;
-  height: 20rem;
-  font-size: 3rem;
-  background: white;
-  color: gray;
-  height: 10rem;
-  font-weight: bold;
-  transition: 0.5s all;
-  transform-origin: left; }
+  transition: 1s;
+  width: fit-content; }
 
-.home__portfolio-btn-bg {
-  transition: 0.5s all;
-  opacity: 1;
-  z-index: -1;
-  background: lightgreen;
-  height: 10rem;
-  width: 25rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+.text-2 {
+  background: transparent !important;
+  transition: 1s all;
+  display: none;
+  clip-path: none !important; }
 
-.about__desc {
-  font-family: "Rubik", sans-serif;
-  margin-bottom: 1.5rem;
-  color: snow; }
+.about {
+  height: 100vh;
+  background: red; }
+  .about__desc {
+    font-family: "Rubik", sans-serif;
+    margin-bottom: 1.5rem;
+    color: snow; }
