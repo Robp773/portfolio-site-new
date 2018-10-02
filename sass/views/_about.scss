@@ -1,9 +1,132 @@
-.about{
-    height: 100vh;
-    background: red;
-    &__desc {
-        font-family: "Rubik", sans-serif;
-        margin-bottom: 1.5rem;
-        color: snow;
-      }
+.about {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  border: 1rem solid $primary-color;
+  background: #232526; /* fallback for old browsers */
+  background: linear-gradient(to right, #232526, #414345, #414345, #232526);
+}
+.desc {
+  display: flex;
+  width: 45%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+
+  &__box {
+    z-index: 1;
+    margin-top: 5rem;
+    text-align: center;
+    padding: 1rem;
+    font-family: "Rubik", sans-serif;
+    font-size: 5rem;
+    display: flex;
+    border: 0.5rem solid $primary-color;
+    border-left: 0;
+    flex-direction: column;
+    color: $secondary-color;
+    background: #414345;
+    box-shadow: 1rem 0 3rem black;
+    transition: 0.5s all;
+
+    & > ul {
+      list-style: none;
+    }
+  }
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  font-size: 3.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+  color: $secondary-color;
+
+  &__note {
+    margin: 3rem;
+    font-size: 5rem;
+  }
+  &__list {
+    width: 45%;
+    font-size: 4rem;
+    color: $primary-color;
+  }
+  &__list-item {
+    opacity: 0;
+    animation: slide-from-left 1s .25s linear forwards;
+    display: flex;
+    align-items: center;
+    color: $secondary-color;
+    margin-bottom: 3rem;
+    & > h3 {
+      display: inline-block;
+    }
+  }
+
+  &__box-1 {
+  }
+  &__box-2 {
+  }
+  &__box-3 {
+  }
+  &__box-4 {
+  }
+}
+
+.active {
+  z-index: 0;
+  animation: slide-from-right 1s;
+  display: flex;
+  backface-visibility: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inactive {
+  display: none;
+}
+
+.focused {
+  border: 0.5rem solid white;
+  border-left: 0;
+}
+.puzzle {
+  display: inline-block;
+  &__piece {
+    &--1 {
+      transform: rotate(211deg);
+    }
+    &--2 {
+      transform: rotate(150deg);
+    }
+    &--3 {
+      transform: rotate(40deg);
+    }
+  }
+}
+
+.about-icon {
+  color: $primary-color;
+  font-size: 6rem;
+  display: flex;
+  margin-left: auto;
+
+  &__wrench {
+    opacity: 0;
+    animation: slide-from-left 1s .5s forwards, wrench-wiggle 1s 1.5s forwards;
+  }
+  &__cog {
+    opacity: 0;
+    animation: slide-from-left 1s 1s forwards, cog-spin 0.35s 2 2s linear;
+  }
+  &__puzzle{
+    opacity: 0;
+    animation: slide-from-left 1s 1.5s forwards, puzzle-zoom .75s 2.5s linear;
+  }
 }
