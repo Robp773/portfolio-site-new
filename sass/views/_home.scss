@@ -3,14 +3,15 @@
   position: relative;
   width: 100%;
   height: 100vh;
-
+  background: #232526; /* fallback for old browsers */
+  background: linear-gradient(to right, #232526, #414345, #414345, #232526);
   &__content {
     font-family: "Rubik", sans-serif;
     font-size: 4rem;
     text-align: center;
     position: absolute;
     color: $secondary-color;
-    top: 35%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: fit-content;
@@ -18,12 +19,17 @@
 
   //   title of text
   &__name {
+    animation: slide-from-left 1s ease-in-out;
+    backface-visibility: hidden;
     color: $primary-color;
     font-family: "Black Ops One", cursive;
     margin-bottom: 1rem;
   }
 
   &__contact-info {
+    animation: slide-from-right 1s ease-in-out;
+    backface-visibility: hidden;
+
     & > a {
       position: relative;
       display: inline-block;
@@ -44,8 +50,10 @@
 
   // parent for portfolio-btn to prevent hover on/off stuttering
   &__portfolio-btn-parent {
+    animation: fade-in 1s linear;
+
     position: absolute;
-    top: 70%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 27em;
