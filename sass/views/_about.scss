@@ -58,7 +58,7 @@
   }
   &__list-item {
     opacity: 0;
-    animation: slide-from-left 1s .25s linear forwards;
+    animation: slide-from-left 1s 0.25s linear forwards;
     display: flex;
     align-items: center;
     color: $secondary-color;
@@ -66,15 +66,6 @@
     & > h3 {
       display: inline-block;
     }
-  }
-
-  &__box-1 {
-  }
-  &__box-2 {
-  }
-  &__box-3 {
-  }
-  &__box-4 {
   }
 }
 
@@ -119,14 +110,14 @@
 
   &__wrench {
     opacity: 0;
-    animation: slide-from-left 1s .5s forwards, wrench-wiggle 1s 1.5s forwards;
+    animation: slide-from-left 1s 0.5s forwards, wrench-wiggle 1s 1.5s forwards;
   }
   &__cog {
     opacity: 0;
     animation: slide-from-left 1s 1s forwards, cog-spin 0.35s 2 2s linear;
   }
-  &__puzzle{
+  &__puzzle {
     opacity: 0;
-    animation: slide-from-left 1s 1.5s forwards, puzzle-zoom .75s 2.5s linear;
+    animation: slide-from-left 1s 1.5s forwards, puzzle-zoom 0.75s 2.5s linear;
   }
 }
