@@ -77,6 +77,19 @@
     border-radius: 100px;
   }
 }
+@keyframes tech-expand {
+  0% {
+    width: 0%;
+    height: 0%;
+    background: rgba(144, 238, 144, 1);
+  }
+  100% {
+    background: rgba(144, 238, 144, 0);
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+  }
+}
 @keyframes tech-drop-off {
   0% {
     transform: translateY(0) rotate(0);
@@ -122,3 +135,14 @@
   }
 }
 
+@keyframes underline-fade {
+  0% {
+    width: 0%;
+    border-bottom: 2px solid $primary-color;
+  }
+  100% {
+
+    width: 20rem;
+    border-bottom: 2px solid transparent;
+  }
+}
