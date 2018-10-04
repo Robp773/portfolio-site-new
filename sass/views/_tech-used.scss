@@ -1,0 +1,83 @@
+.used-tech {
+  display: flex;
+  align-items: center;
+  & > ul{
+    color: $primary-color;
+  }
+  & > li{
+    color: $secondary-color !important;
+  }
+
+  &__li-wrapper{
+    color: $secondary-color;
+  }
+}
+
+.circle-container {
+  @include on-circle($item-count: 10, $circle-size: 35rem, $item-size: 0.5rem);
+  animation: cog-spin 0.75s ease-out, fade-in 1.25s ease-out;
+  shape-outside: circle(50%);
+
+  margin: 3.75rem;
+
+  & > i {
+    font-size: 5rem;
+    color: $secondary-color;
+
+    &::before {
+      z-index: 111;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 1s;
+      border-bottom: 2px solid transparent;
+    }
+    &:hover::before {
+      transition: all 1s;
+      animation: underline-fade 1s ease-out, fade-in 0.5s linear;
+    }
+    &:nth-child(1):hover::before {
+      content: "MongoDB";
+    }
+
+    &:nth-child(2):hover::before {
+      content: "Express";
+    }
+    &:nth-child(3):hover::before {
+      content: "React";
+    }
+    &:nth-child(4):hover::before {
+      content: "Node";
+    }
+    &:nth-child(5):hover::before {
+      content: "AngularJS";
+    }
+    &:nth-child(6):hover::before {
+      content: "SASS";
+    }
+    &:nth-child(7):hover::before {
+      content: "CSS";
+    }
+    &:nth-child(8):hover::before {
+      content: "HTML";
+    }
+    &:nth-child(9):hover::before {
+      content: "Git";
+    }
+    &:nth-child(10):hover::before {
+      content: "JavaScript";
+    }
+    &:nth-child(11) {
+      color: $primary-color;
+    }
+    &:nth-child(11):hover::before {
+      color: $secondary-color;
+      text-align: center;
+      content: "Full Stack JavaScript";
+    }
+  }
+}
