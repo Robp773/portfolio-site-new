@@ -17,7 +17,7 @@
 
 <body>
 
-    <!-- <div class="home">
+    <div class="home">
         <div class="home__content">
             <h1 class="home__name">Robert Peterman <br /> Fullstack Web Developer</h1>
             <div class="home__contact-info">
@@ -54,15 +54,14 @@
             <div class="home__portfolio-btn-item home__portfolio-btn-item--8">SASS</div>
 
         </div>
-    </div> -->
+    </div>
 
     <div id='about' class="about">
 
         <div class="desc">
 
-            <h2 id="box-1" class="desc__box focused">What I do...</h2>
-            <h2 id="box-2" class="desc__box">What I Use...</h2>
-            <h2 id="box-3" class="desc__box">What I'm Working on...</h2>
+            <h2 id="box-1" class="desc__box focused">What I do</h2>
+            <h2 id="box-2" class="desc__box">What I Use</h2>
             <h2 id="box-4" class="desc__box">Project Work</h2>
 
         </div>
@@ -103,13 +102,6 @@
 
             <div class="info-section__box-2 inactive">
                 <div class="used-tech">
-                    <ul>
-                        <li><span class="used-tech__li-wrapper">I specialize in the MERN stack.</span></li>
-                        <li><span class="used-tech__li-wrapper">Also familiar with AngularJS.</span></li>
-                        <li><span class="used-tech__li-wrapper">Experienced with Git version control</span></li>
-                        <li><span class="used-tech__li-wrapper">Comfortable with all things JavaScript</span></li>
-
-                    </ul>
 
                     <ul class='circle-container'>
                         <i class="devicon-mongodb-plain"></i>
@@ -122,7 +114,15 @@
                         <i class="devicon-html5-plain"></i>
                         <i class="devicon-git-plain"></i>
                         <i class="fab fa-js"></i>
-                        <i class="fas fa-toolbox"></i>
+                        <i class="splosion fas fa-toolbox">
+                            <!-- <div class="word-splosion">React</div>
+                            <div class="word-splosion">React</div>
+                            <div class="word-splosion">React</div>
+                            <div class="word-splosion">React</div>
+                            <div class="word-splosion">React</div>
+                            <div class="word-splosion">React</div> -->
+                        </i>
+
                     </ul>
                 </div>
             </div>
@@ -132,12 +132,44 @@
                 <div>Looking to dive deeper into AngularJS, React Native, BEM methodology, and more advanced
                     CSS/Design concepts.</div>
             </div>
-            <div class="info-section__box-4 inactive">Projects will go here</div>
-        </div>
-    </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="index.js"></script>
+            <div class="info-section__box-4 inactive">
+                <div class="portfolio">
+                    <button class="portfolio__btn portfolio__btn--left"><i class="fas fa-chevron-left"></i></button>
+                    <div class="portfolio__content">
+                        <div class="portfolio__header-parent">
+
+                            <a id="live-link" target='#'>
+                                <i class="portfolio__icon fas fa-link"></i>
+                            </a>
+
+                            <h2 id="project-name" class="portfolio__header"></h2>
+
+                            <a id="github-link" target='#'>
+                                <i class="portfolio__icon devicon-github-plain"></i>
+                            </a>
+                            <a id="github-link-2" target='#'>
+                                <i class="portfolio__icon devicon-github-plain"></i>
+                            </a>
+
+                        </div>
+
+                        <div class="portfolio__screenshots-parent">
+                            <img id="screenshot-desktop" class="portfolio__screenshot-desktop" />
+                            <img id="screenshot-mobile" class="portfolio__screenshot-mobile" />
+                        </div>
+                        <div id="description" class="portfolio__desc">
+                        </div>
+                    </div>
+                    <button class="portfolio__btn portfolio__btn--right"><i class="fas fa-chevron-right"></i></button>
+
+                </div>
+
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="index.js"></script>
 </body>
 
 </html>
