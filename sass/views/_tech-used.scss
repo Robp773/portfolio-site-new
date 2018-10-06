@@ -1,24 +1,25 @@
 .used-tech {
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
-  & > ul{
+  & > ul {
     color: $primary-color;
   }
-  & > li{
+  & > li {
+    margin: 0;
     color: $secondary-color !important;
   }
 
-  &__li-wrapper{
+  &__li-wrapper {
     color: $secondary-color;
   }
 }
 
 .circle-container {
-  @include on-circle($item-count: 10, $circle-size: 35rem, $item-size: 0.5rem);
+  @include on-circle($item-count: 10, $circle-size: 45rem, $item-size: 0.5rem);
   animation: cog-spin 0.75s ease-out, fade-in 1.25s ease-out;
   shape-outside: circle(50%);
-
-  margin: 3.75rem;
+  position: relative;
 
   & > i {
     font-size: 5rem;
@@ -74,10 +75,25 @@
     &:nth-child(11) {
       color: $primary-color;
     }
-    &:nth-child(11):hover::before {
+    &:nth-child(11) &:nth-child(11):hover::before {
       color: $secondary-color;
       text-align: center;
       content: "Full Stack JavaScript";
     }
   }
 }
+
+// .splosion {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   & > div {
+//     color: blue;
+//   }
+//   &:hover :nth-child(6) {
+//     color: red !important;
+//   }
+// }
+// .word-splosion {
+//   position: absolute;
+// }
