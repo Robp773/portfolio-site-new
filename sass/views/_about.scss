@@ -9,13 +9,18 @@
 }
 .desc {
   display: flex;
-  width: 45%;
   height: 100%;
+  width: 20%;
+  flex: none;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
 
   &__box {
+    width: 100%;
+    flex: none;
     z-index: 1;
+    justify-content: center;
     margin-top: 5rem;
     text-align: center;
     padding: 1rem;
@@ -24,19 +29,15 @@
     display: flex;
     border: 0.5rem solid $primary-color;
     border-left: 0;
-    flex-direction: column;
     color: $secondary-color;
     background: #414345;
     box-shadow: 1rem 0 3rem black;
     transition: 0.5s all;
-
-    & > ul {
-      list-style: none;
-    }
   }
 }
 
 .info-section {
+  // background: red;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
