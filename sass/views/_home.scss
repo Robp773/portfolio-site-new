@@ -24,6 +24,9 @@
     color: $primary-color;
     font-family: "Black Ops One", cursive;
     margin-bottom: 1rem;
+    @include respond(phone) {
+      font-size: 4rem;
+    }
   }
 
   &__contact-info {
@@ -101,6 +104,16 @@
         0 55%,
         20% 55%
       );
+      @include respond(phone) {
+        @keyframes arrow-grow {
+          0% {
+            height: 7rem;
+          }
+          100% {
+            height: 20rem;
+          }
+        }
+      }
     }
   }
   // btn that becomes down arrow when portfolio-btn-parent is hovered
@@ -119,6 +132,11 @@
     height: 10rem;
     font-weight: bold;
     transition: 0.5s all;
+    @include respond(phone) {
+      top: 65%;
+      height: 7rem;
+      width: 17rem;
+    }
   }
   // matches size of portfolio-btn until portfolio-parent-btn is hovered
   // gives border edge to portfolio-btn
@@ -132,6 +150,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @include respond(phone) {
+      top: 65%;
+      height: 7rem;
+      width: 17rem;
+    }
   }
   &__portfolio-btn-item {
     position: absolute;
