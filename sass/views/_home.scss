@@ -3,8 +3,28 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background: #232526; /* fallback for old browsers */
+  // background: #232526; /* fallback for old browsers */
   background: linear-gradient(to right, #232526, #414345, #414345, #232526);
+  // background: rgba(0, 0, 0, 0.5);
+
+  &__bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 0.55;
+    overflow: hidden;
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+  &__bg-video-content {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+  }
   &__content {
     font-family: "Rubik", sans-serif;
     font-size: 4rem;
@@ -15,6 +35,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: fit-content;
+    z-index: 1;
   }
 
   //   title of text
@@ -24,6 +45,10 @@
     color: $primary-color;
     font-family: "Black Ops One", cursive;
     margin-bottom: 1rem;
+
+    @include respond(tab-port) {
+      font-size: 6rem;
+    }
     @include respond(phone) {
       font-size: 4rem;
     }
@@ -36,7 +61,8 @@
     & > a {
       position: relative;
       display: inline-block;
-      height: 100%;
+      height: fit-content;
+      width: fit-content;
     }
     & > a:hover::before {
       content: "";
@@ -53,8 +79,8 @@
 
   // parent for portfolio-btn to prevent hover on/off stuttering
   &__portfolio-btn-parent {
+    z-index: 1;
     animation: fade-in 1s linear;
-
     position: absolute;
     top: 65%;
     left: 50%;
@@ -62,7 +88,13 @@
     width: 27em;
     height: 13rem;
     &:hover {
-      height: 31rem;
+      height: 70rem;
+      width: 35rem;
+      @include respond(phone) {
+        &:hover {
+          height: 30rem;
+        }
+      }
     }
     &:hover :nth-child(n + 3):nth-child(-n + 7) {
       color: $secondary-color;
@@ -132,6 +164,9 @@
     height: 10rem;
     font-weight: bold;
     transition: 0.5s all;
+    @include respond(tab-port) {
+      top: 60%;
+    }
     @include respond(phone) {
       top: 65%;
       height: 7rem;
@@ -150,6 +185,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @include respond(tab-port) {
+      top: 60%;
+    }
     @include respond(phone) {
       top: 65%;
       height: 7rem;

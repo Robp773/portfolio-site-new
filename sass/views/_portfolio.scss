@@ -4,8 +4,32 @@
   justify-content: center;
   width: 100%;
 
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+
+  &__mobile-nav {
+    display: none;
+    @include respond(tab-port) {
+      margin-top: 1rem;
+      border-top: 3px solid $primary-color;
+      border-bottom: 3px solid $primary-color;
+      width: 100%;
+      display: flex;
+      height: fit-content;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      & > button {
+        padding: 0.25rem 6rem;
+        height: fit-content;
+        font-size: 3rem;
+        box-shadow: none;
+      }
+    }
+  }
+
   &__content {
-    // display: flex;
     width: 50vw;
     flex-direction: column;
     border-radius: 50px;
@@ -14,14 +38,16 @@
     box-shadow: 0 1rem 3rem black;
     border: 1px solid $primary-color;
     padding: 2rem;
+    @include respond(tab-port) {
+      width: 100%;
+      border-radius: 0;
+      border: 0;
+      padding: 0;
+      box-shadow: none;
+      height: 100%;
+    }
   }
   &__btn {
-    &:active{
-      box-shadow: 0 .5rem 4rem black;
-    }
-    &:active > i {
-      color: $primary-color;
-    }
     border: 0;
     outline: none;
     font-size: 5rem;
@@ -30,20 +56,43 @@
     align-items: center;
     margin: 1rem;
     background: white;
-    height: 45rem;
+    height: 40rem;
     border-radius: 100px;
     box-shadow: 0 1rem 3rem black;
+
+    &:active {
+      @include respond(tab-port) {
+        box-shadow: none;
+      }
+      box-shadow: 0 0.5rem 4rem black;
+    }
+    &:active > i {
+      color: $primary-color;
+    }
   }
 
   &__header-parent {
     display: flex;
     margin: 1rem;
+
+    @include respond(tab-port) {
+      & > h2 {
+        font-size: 4rem;
+      }
+
+      & > a {
+        font-size: 2rem;
+      }
+    }
   }
 
   &__icon {
     color: $secondary-color;
     font-size: 7rem;
     transition: 0.25s all;
+    @include respond(tab-port) {
+      font-size: 5rem;
+    }
     &:hover {
       color: $primary-color;
     }
@@ -54,33 +103,75 @@
     margin: 0 auto 2rem auto;
     font-size: 8rem;
     border-bottom: 2px solid $primary-color;
+    @include respond(tab-port) {
+      font-size: 6rem;
+    }
   }
 
   &__screenshots-parent {
+    display: flex;
     padding: 2rem;
     width: fit-content;
     margin: auto;
     border-radius: 50px;
-    transition: .5s all ease-in-out;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s all ease-in-out;
     background: white;
-
-    &:hover {
-      transform: scale(1.5);
+    @include respond(tab-port) {
+      padding: 0.25rem;
+      border-radius: 0;
+      width: 100%;
     }
   }
 
   &__screenshot-desktop {
     width: 60rem;
-    height: 30%;
+    height: 35%;
+    transition: 0.5s ease-in;
+    margin-right: 1rem;
+    &:hover {
+      padding: 1rem;
+      transform: scale(1.75);
+      background: white;
+      border-radius: 25px;
+      transition-delay: 0.1s;
+    }
+    @include respond(tab-port) {
+      width: 100%;
+      &:hover {
+      }
+    }
   }
 
   &__screenshot-mobile {
-    width: 30rem;
+    width: 20rem;
     height: 30%;
+    transition: 0.5s ease-in;
+    @include respond(tab-port) {
+      display: none;
+    }
+
+    &:hover {
+      border-radius: 25px;
+      padding: 1rem;
+      transform: scale(1.75);
+      background: white;
+    }
   }
 
   &__desc {
     margin: 1rem;
     padding: 1rem;
+    @include respond(tab-port) {
+      font-size: 2.5rem;
+      padding: 0;
+    }
+  }
+}
+
+@include respond(tab-port) {
+  .non-mobile-btn {
+    display: none;
   }
 }

@@ -22,6 +22,14 @@ body {
   margin: 1rem;
   width: 5vw;
   box-sizing: border-box;
+  @include respond(tab-port) {
+    width: fit-content;
+  }
+  @include respond(phone) {
+    font-size: 6rem;
+    margin: 1rem;
+    width: fit-content;
+  }
 }
 
 a {

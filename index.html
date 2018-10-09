@@ -18,6 +18,12 @@
 <body>
 
     <div class="home">
+        <div class="home__bg-video">
+            <video class="home__bg-video-content" autoplay muted loop>
+                <source src="img/bg-video.mp4" type="video/mp4">
+                Your browser is not supported!
+            </video>
+        </div>
         <div class="home__content">
             <h1 class="home__name">Robert Peterman <br /> Fullstack Web Developer</h1>
             <div class="home__contact-info">
@@ -62,13 +68,13 @@
 
             <h2 id="box-1" class="desc__box focused">What I do</h2>
             <h2 id="box-2" class="desc__box">What I Use</h2>
-            <h2 id="box-4" class="desc__box">Project Work</h2>
+            <h2 id="box-3" class="desc__box">Project Work</h2>
 
         </div>
 
         <div class="info-section">
             <div class="info-section__box-1 inactive">
-                <h2>I create
+                <h2 class="info-section__h2">I create
                     <span class="u-emphasize">modern</span> and
                     <span class="u-emphasize">responsive</span>
                     web apps.
@@ -114,28 +120,19 @@
                         <i class="devicon-html5-plain"></i>
                         <i class="devicon-git-plain"></i>
                         <i class="fab fa-js"></i>
-                        <i class="splosion fas fa-toolbox">
-                            <!-- <div class="word-splosion">React</div>
-                            <div class="word-splosion">React</div>
-                            <div class="word-splosion">React</div>
-                            <div class="word-splosion">React</div>
-                            <div class="word-splosion">React</div>
-                            <div class="word-splosion">React</div> -->
-                        </i>
-
+                        <i class="fas fa-toolbox"></i>
                     </ul>
                 </div>
             </div>
-            <div class="info-section__box-3 inactive">
-                <div>Currently focusing on sharpening my frontend skills while still maintaining my fullstack
-                    skillset</div>
-                <div>Looking to dive deeper into AngularJS, React Native, BEM methodology, and more advanced
-                    CSS/Design concepts.</div>
-            </div>
 
-            <div class="info-section__box-4 inactive">
+
+            <div class="info-section__box-3 inactive">
                 <div class="portfolio">
-                    <button class="portfolio__btn portfolio__btn--left"><i class="fas fa-chevron-left"></i></button>
+                    <button class="non-mobile-btn portfolio__btn portfolio__btn--left"><i class="fas fa-chevron-left"></i></button>
+
+
+
+
                     <div class="portfolio__content">
                         <div class="portfolio__header-parent">
 
@@ -152,6 +149,9 @@
                                 <i class="portfolio__icon devicon-github-plain"></i>
                             </a>
 
+
+
+
                         </div>
 
                         <div class="portfolio__screenshots-parent">
@@ -161,15 +161,18 @@
                         <div id="description" class="portfolio__desc">
                         </div>
                     </div>
-                    <button class="portfolio__btn portfolio__btn--right"><i class="fas fa-chevron-right"></i></button>
-
+                    <button class="non-mobile-btn portfolio__btn portfolio__btn--right"><i class="fas fa-chevron-right"></i></button>
+                    <div class="portfolio__mobile-nav">
+                        <button class="mobile-btn portfolio__btn portfolio__btn--left"><i class="fas fa-chevron-left"></i></button>
+                        <button class="mobile-btn portfolio__btn portfolio__btn--right"><i class="fas fa-chevron-right"></i></button>
+                    </div>
                 </div>
-
             </div>
         </div>
+    </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
