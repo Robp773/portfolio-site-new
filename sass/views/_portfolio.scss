@@ -8,6 +8,7 @@
     flex-direction: column;
   }
 
+  // horizontal tabs for smaller devices
   &__mobile-nav {
     display: none;
     @include respond(tab-port) {
@@ -28,7 +29,7 @@
       }
     }
   }
-
+  // portfolio projects
   &__content {
     width: 50vw;
     flex-direction: column;
@@ -38,6 +39,7 @@
     box-shadow: 0 1rem 3rem black;
     border: 1px solid $primary-color;
     padding: 2rem;
+    // expand to full width when selector tabs become horizontal
     @include respond(tab-port) {
       width: 100%;
       border-radius: 0;
@@ -47,6 +49,8 @@
       height: 100%;
     }
   }
+
+  // btn to switch between projects
   &__btn {
     border: 0;
     outline: none;
@@ -70,7 +74,7 @@
       color: $primary-color;
     }
   }
-
+// project name and icons/links
   &__header-parent {
     display: flex;
     margin: 1rem;
@@ -154,7 +158,7 @@
       cursor: pointer;
     }
   }
-
+// description of project
   &__desc {
     margin: 1rem;
     padding: 1rem;
@@ -165,11 +169,15 @@
   }
 }
 
+// hides side btns for navigation and replaces with smaller mobile friendly btns
+
 @include respond(tab-port) {
   .non-mobile-btn {
     display: none;
   }
 }
+
+// modal for selecting screenshots
 .modal {
   width: 100vw;
   height: 100vh;

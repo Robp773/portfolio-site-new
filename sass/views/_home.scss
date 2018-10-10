@@ -3,10 +3,10 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  // background: #232526; /* fallback for old browsers */
+  // background gradient basically functions as a fall back to bg-video-content video
   background: linear-gradient(to right, #232526, #414345, #414345, #232526);
-  // background: rgba(0, 0, 0, 0.5);
 
+  // background video
   &__bg-video {
     position: absolute;
     top: 0;
@@ -16,6 +16,7 @@
     z-index: 1;
     opacity: 0.55;
     overflow: hidden;
+    // disabled on smaller devices - reverts to gradient
     @include respond(tab-port) {
       display: none;
     }
@@ -25,6 +26,8 @@
     width: 100%;
     object-fit: fill;
   }
+
+  // parent of main text content
   &__content {
     font-family: "Rubik", sans-serif;
     font-size: 4rem;
@@ -38,7 +41,7 @@
     z-index: 1;
   }
 
-  //   title of text
+  //   name and title
   &__name {
     animation: slide-from-left 1s ease-in-out;
     backface-visibility: hidden;
@@ -54,6 +57,7 @@
     }
   }
 
+  // icons with links to urls - github/linkedin/email
   &__contact-info {
     animation: slide-from-right 1s ease-in-out;
     backface-visibility: hidden;
@@ -64,6 +68,7 @@
       position: relative;
       display: inline-block;
     }
+    // hover background animation
     & > a:hover::before {
       content: "";
       z-index: -1;
@@ -96,6 +101,8 @@
         }
       }
     }
+
+    // selects only elements that "fall" out when hovered
     &:hover :nth-child(n + 3):nth-child(-n + 7) {
       color: $secondary-color;
       animation: tech-drop-off 1s linear;
@@ -113,6 +120,8 @@
         22% 57%
       );
     }
+
+    // keeps text centered correctly as element changes shape/grows
     &:hover .text {
       display: none;
     }
@@ -194,6 +203,8 @@
       width: 17rem;
     }
   }
+
+  // elements that fall out of portfolio btn
   &__portfolio-btn-item {
     position: absolute;
     top: 50%;

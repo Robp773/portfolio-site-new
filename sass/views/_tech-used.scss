@@ -1,29 +1,14 @@
-.used-tech {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  & > ul {
-    color: $primary-color;
-    @include respond(phone) {
-      margin-top: 50%;
-    }
-  }
-  & > li {
-    margin: 0;
-    color: $secondary-color !important;
-  }
 
-  &__li-wrapper {
-    color: $secondary-color;
-  }
-}
-
+// circle that tech icons are placed around
 .circle-container {
   @include on-circle($item-count: 10, $circle-size: 45rem, $item-size: 0.5rem);
   animation: cog-spin 0.75s ease-out, fade-in 1.25s ease-out;
   shape-outside: circle(50%);
   position: relative;
+
   @include respond(phone) {
+    margin-top: 50%;
+
     @include on-circle(
       $item-count: 10,
       $circle-size: 22.5rem,
@@ -55,10 +40,11 @@
         animation: none;
       }
     }
+
+    // reveals text name on hover
     &:nth-child(1):hover::before {
       content: "MongoDB";
     }
-
     &:nth-child(2):hover::before {
       content: "Express";
     }
@@ -66,6 +52,7 @@
     &:nth-child(3):hover::before {
       content: "React";
     }
+
     &:nth-child(4):hover::before {
       content: "Node";
     }
@@ -91,6 +78,8 @@
       color: $primary-color;
       transition: 1s all;
     }
+
+    // toolbox icon in center of circle
     &:nth-child(11):hover::before {
       content: "Full Stack JavaScript";
       color: $secondary-color;

@@ -26,6 +26,8 @@
     height: fit-content;
   }
 
+  // selector tabs on left or top of view (depending on device width)
+
   &__box {
     width: 100%;
     justify-content: center;
@@ -57,6 +59,7 @@
   }
 }
 
+// content displayed depending on tab selected
 .info-section {
   display: flex;
   flex-direction: column;
@@ -132,6 +135,8 @@
   }
 }
 
+// stlying for content selected by tabs
+
 .active {
   z-index: 0;
   animation: slide-from-right 1s;
@@ -146,6 +151,7 @@
   display: none;
 }
 
+// styling for selected tabs
 .focused {
   border: 0.5rem solid white;
   border-left: 0;
@@ -153,21 +159,9 @@
     border: 0.5rem solid white;
   }
 }
-.puzzle {
-  display: inline-block;
-  &__piece {
-    &--1 {
-      transform: rotate(211deg);
-    }
-    &--2 {
-      transform: rotate(150deg);
-    }
-    &--3 {
-      transform: rotate(40deg);
-    }
-  }
-}
 
+
+// icons in about view and their animations
 .about-icon {
   color: $primary-color;
   font-size: 6rem;
