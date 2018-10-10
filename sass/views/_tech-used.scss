@@ -1,4 +1,3 @@
-
 // circle that tech icons are placed around
 .circle-container {
   @include on-circle($item-count: 10, $circle-size: 45rem, $item-size: 0.5rem);
@@ -40,7 +39,6 @@
         animation: none;
       }
     }
-
     // reveals text name on hover
     &:nth-child(1):hover::before {
       content: "MongoDB";
@@ -48,7 +46,6 @@
     &:nth-child(2):hover::before {
       content: "Express";
     }
-
     &:nth-child(3):hover::before {
       content: "React";
     }
@@ -56,6 +53,7 @@
     &:nth-child(4):hover::before {
       content: "Node";
     }
+
     &:nth-child(5):hover::before {
       content: "AngularJS";
     }
@@ -77,12 +75,10 @@
     &:nth-child(11) {
       color: $primary-color;
       transition: 1s all;
-    }
-
-    // toolbox icon in center of circle
-    &:nth-child(11):hover::before {
-      content: "Full Stack JavaScript";
-      color: $secondary-color;
+      &:hover::before {
+        content: "Full Stack JavaScript";
+        color: $secondary-color;
+      }
     }
   }
 }
