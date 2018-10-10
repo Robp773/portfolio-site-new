@@ -57,12 +57,12 @@
   &__contact-info {
     animation: slide-from-right 1s ease-in-out;
     backface-visibility: hidden;
+    display: flex;
+    justify-content: space-evenly;
 
     & > a {
       position: relative;
       display: inline-block;
-      height: fit-content;
-      width: fit-content;
     }
     & > a:hover::before {
       content: "";
