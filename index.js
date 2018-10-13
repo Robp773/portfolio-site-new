@@ -136,6 +136,6 @@ let transitionProjects = (projectNum) => {
     setPortfolioContent(projectNum)
     $('.portfolio__content').animate({
       opacity: 1
-    }, 500, function () {})
+    }, 750, function () {})
   })
 }
