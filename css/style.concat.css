@@ -72,6 +72,21 @@ ORDER: Base + typography > general layout + grid > page layout > components
     height: 150%;
     border-radius: 100px; } }
 
+@keyframes toolbox-expand {
+  0% {
+    background: lightgreen;
+    opacity: 0.85;
+    width: 0%;
+    height: 0%; }
+  50% {
+    opacity: .65; }
+  100% {
+    background: lightgreen;
+    opacity: 0;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 100px; } }
+
 @keyframes tech-expand {
   0% {
     width: 0%;
@@ -531,23 +546,25 @@ a {
     .circle-container > *:nth-of-type(1) {
       transform: rotate(0deg) translate(22.5rem) rotate(0deg); }
     .circle-container > *:nth-of-type(2) {
-      transform: rotate(36deg) translate(22.5rem) rotate(-36deg); }
+      transform: rotate(32.72727deg) translate(22.5rem) rotate(-32.72727deg); }
     .circle-container > *:nth-of-type(3) {
-      transform: rotate(72deg) translate(22.5rem) rotate(-72deg); }
+      transform: rotate(65.45455deg) translate(22.5rem) rotate(-65.45455deg); }
     .circle-container > *:nth-of-type(4) {
-      transform: rotate(108deg) translate(22.5rem) rotate(-108deg); }
+      transform: rotate(98.18182deg) translate(22.5rem) rotate(-98.18182deg); }
     .circle-container > *:nth-of-type(5) {
-      transform: rotate(144deg) translate(22.5rem) rotate(-144deg); }
+      transform: rotate(130.90909deg) translate(22.5rem) rotate(-130.90909deg); }
     .circle-container > *:nth-of-type(6) {
-      transform: rotate(180deg) translate(22.5rem) rotate(-180deg); }
+      transform: rotate(163.63636deg) translate(22.5rem) rotate(-163.63636deg); }
     .circle-container > *:nth-of-type(7) {
-      transform: rotate(216deg) translate(22.5rem) rotate(-216deg); }
+      transform: rotate(196.36364deg) translate(22.5rem) rotate(-196.36364deg); }
     .circle-container > *:nth-of-type(8) {
-      transform: rotate(252deg) translate(22.5rem) rotate(-252deg); }
+      transform: rotate(229.09091deg) translate(22.5rem) rotate(-229.09091deg); }
     .circle-container > *:nth-of-type(9) {
-      transform: rotate(288deg) translate(22.5rem) rotate(-288deg); }
+      transform: rotate(261.81818deg) translate(22.5rem) rotate(-261.81818deg); }
     .circle-container > *:nth-of-type(10) {
-      transform: rotate(324deg) translate(22.5rem) rotate(-324deg); }
+      transform: rotate(294.54545deg) translate(22.5rem) rotate(-294.54545deg); }
+    .circle-container > *:nth-of-type(11) {
+      transform: rotate(327.27273deg) translate(22.5rem) rotate(-327.27273deg); }
   @media only screen and (max-width: 37.5em) {
     .circle-container {
       margin-top: 50%;
@@ -568,23 +585,25 @@ a {
         .circle-container > *:nth-of-type(1) {
           transform: rotate(0deg) translate(11.25rem) rotate(0deg); }
         .circle-container > *:nth-of-type(2) {
-          transform: rotate(36deg) translate(11.25rem) rotate(-36deg); }
+          transform: rotate(32.72727deg) translate(11.25rem) rotate(-32.72727deg); }
         .circle-container > *:nth-of-type(3) {
-          transform: rotate(72deg) translate(11.25rem) rotate(-72deg); }
+          transform: rotate(65.45455deg) translate(11.25rem) rotate(-65.45455deg); }
         .circle-container > *:nth-of-type(4) {
-          transform: rotate(108deg) translate(11.25rem) rotate(-108deg); }
+          transform: rotate(98.18182deg) translate(11.25rem) rotate(-98.18182deg); }
         .circle-container > *:nth-of-type(5) {
-          transform: rotate(144deg) translate(11.25rem) rotate(-144deg); }
+          transform: rotate(130.90909deg) translate(11.25rem) rotate(-130.90909deg); }
         .circle-container > *:nth-of-type(6) {
-          transform: rotate(180deg) translate(11.25rem) rotate(-180deg); }
+          transform: rotate(163.63636deg) translate(11.25rem) rotate(-163.63636deg); }
         .circle-container > *:nth-of-type(7) {
-          transform: rotate(216deg) translate(11.25rem) rotate(-216deg); }
+          transform: rotate(196.36364deg) translate(11.25rem) rotate(-196.36364deg); }
         .circle-container > *:nth-of-type(8) {
-          transform: rotate(252deg) translate(11.25rem) rotate(-252deg); }
+          transform: rotate(229.09091deg) translate(11.25rem) rotate(-229.09091deg); }
         .circle-container > *:nth-of-type(9) {
-          transform: rotate(288deg) translate(11.25rem) rotate(-288deg); }
+          transform: rotate(261.81818deg) translate(11.25rem) rotate(-261.81818deg); }
         .circle-container > *:nth-of-type(10) {
-          transform: rotate(324deg) translate(11.25rem) rotate(-324deg); } }
+          transform: rotate(294.54545deg) translate(11.25rem) rotate(-294.54545deg); }
+        .circle-container > *:nth-of-type(11) {
+          transform: rotate(327.27273deg) translate(11.25rem) rotate(-327.27273deg); } }
   .circle-container > i {
     font-size: 5rem;
     color: white; }
@@ -628,12 +647,24 @@ a {
       content: "Git"; }
     .circle-container > i:nth-child(10):hover::before {
       content: "JavaScript"; }
-    .circle-container > i:nth-child(11) {
-      color: lightgreen;
+    .circle-container > i:nth-child(11):hover::before {
+      content: "jQuery"; }
+    .circle-container > i:nth-child(12) {
+      color: white;
       transition: 1s all; }
-      .circle-container > i:nth-child(11):hover::before {
+      .circle-container > i:nth-child(12):hover::before {
         content: "Full Stack JavaScript";
         color: white; }
+      .circle-container > i:nth-child(12):hover > div {
+        animation: none; }
+
+.animation-div {
+  position: absolute;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: toolbox-expand 1.15s linear infinite; }
 
 .portfolio {
   display: flex;
