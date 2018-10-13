@@ -1,6 +1,6 @@
 // circle that tech icons are placed around
 .circle-container {
-  @include on-circle($item-count: 10, $circle-size: 45rem, $item-size: 0.5rem);
+  @include on-circle($item-count: 11, $circle-size: 45rem, $item-size: 0.5rem);
   animation: cog-spin 0.75s ease-out, fade-in 1.25s ease-out;
   shape-outside: circle(50%);
   position: relative;
@@ -9,7 +9,7 @@
     margin-top: 50%;
 
     @include on-circle(
-      $item-count: 10,
+      $item-count: 11,
       $circle-size: 22.5rem,
       $item-size: 0.4rem
     );
@@ -49,20 +49,20 @@
     &:nth-child(3):hover::before {
       content: "React";
     }
-
     &:nth-child(4):hover::before {
       content: "Node";
     }
-
     &:nth-child(5):hover::before {
       content: "AngularJS";
     }
     &:nth-child(6):hover::before {
       content: "SASS";
     }
+
     &:nth-child(7):hover::before {
       content: "CSS";
     }
+
     &:nth-child(8):hover::before {
       content: "HTML";
     }
@@ -72,13 +72,27 @@
     &:nth-child(10):hover::before {
       content: "JavaScript";
     }
-    &:nth-child(11) {
-      color: $primary-color;
+    &:nth-child(11):hover::before {
+      content: "jQuery";
+    }
+    &:nth-child(12) {
+      color: $secondary-color;
       transition: 1s all;
       &:hover::before {
         content: "Full Stack JavaScript";
         color: $secondary-color;
       }
+      &:hover > div {
+        animation: none;
+      }
     }
   }
+}
+.animation-div {
+  position: absolute;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: toolbox-expand 1.15s linear infinite;
 }

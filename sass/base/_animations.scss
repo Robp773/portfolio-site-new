@@ -75,6 +75,25 @@
     border-radius: 100px;
   }
 }
+
+@keyframes toolbox-expand {
+  0% {
+    background: $primary-color;
+    opacity: 0.85;
+    width: 0%;
+    height: 0%;
+  }
+  50% {
+   opacity: .65;
+  }
+  100% {
+    background: $primary-color;
+    opacity: 0;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 100px;
+  }
+}
 @keyframes tech-expand {
   0% {
     width: 0%;
