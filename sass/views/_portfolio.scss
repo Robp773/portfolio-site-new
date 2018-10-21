@@ -12,6 +12,7 @@
   &__mobile-nav {
     display: none;
     @include respond(tab-port) {
+      
       margin-top: 1rem;
       border-top: 3px solid $primary-color;
       border-bottom: 3px solid $primary-color;
@@ -37,7 +38,7 @@
     text-align: center;
     border-radius: 50px;
     box-shadow: 0 1rem 3rem black;
-    border: 1px solid $primary-color;
+    border: .5rem solid $primary-color;
     padding: 2rem;
     // expand to full width when selector tabs become horizontal
     @include respond(tab-port) {
@@ -95,7 +96,7 @@
     font-size: 7rem;
     transition: 0.25s all;
     @include respond(tab-port) {
-      font-size: 5rem;
+      font-size: 4rem;
     }
     &:hover {
       color: $primary-color;
@@ -106,9 +107,10 @@
     width: fit-content;
     margin: 0 auto 2rem auto;
     font-size: 8rem;
-    border-bottom: 2px solid $primary-color;
+    border-bottom: .5rem solid $primary-color;
     @include respond(tab-land) {
    font-size: 4.75rem;
+   border-bottom: .25rem solid $primary-color;;
     }
     @include respond(tab-port) {
       font-size: 6rem;
@@ -144,6 +146,7 @@
     @include respond(tab-port) {
       width: 100%;
       margin: auto;
+      height: 35vh;
     }
   }
 
