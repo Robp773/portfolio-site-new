@@ -30,11 +30,14 @@
       align-items: center;
       justify-content: center;
       transition: all 1s;
+
       border-bottom: 2px solid transparent;
     }
     &:hover::before {
       transition: all 1s;
       animation: underline-fade 1s ease-out, fade-in 0.5s linear;
+      font-family: 'Merriweather', sans-serif;
+
       @include respond(phone) {
         animation: none;
       }
@@ -70,10 +73,10 @@
       content: "Git";
     }
     &:nth-child(10):hover::before {
-      content: "JavaScript";
+      content: "jQuery";
     }
     &:nth-child(11):hover::before {
-      content: "jQuery";
+      content: "JavaScript";
     }
     &:nth-child(12) {
       color: $secondary-color;
