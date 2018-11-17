@@ -93,7 +93,7 @@ $(document).ready(function () {
 // array of project data to be displayed in html template
 let data = [{
     name: 'News-Views',
-    liveLink: 'https://pacific-headland-83509.herokuapp.com/',
+    liveLink: 'https://robp773.github.io/news-views/build/',
     githubLink: 'https://github.com/Robp773/news-views',
     screenshotDesktop: 'img/newsviews-desktop3.png',
     screenshotMobile: 'img/newsviews-mobile2.png',
