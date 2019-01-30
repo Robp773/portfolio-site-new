@@ -2,7 +2,6 @@
 
 $(document).ready(function () {
 
-
   // page scrolling with portfolio button click
   $('#downBtn').click(function () {
     $([document.documentElement, document.body]).animate({
@@ -60,106 +59,51 @@ $(document).ready(function () {
         $(`#${e.currentTarget.id}`).addClass('focused');
       }
     }
-  });
 
-  // set default portfolio project to display inside html template
-  setPortfolioContent(1);
-
-  // switching between projects in "project work" section
-  let projectNum = 1;
-  let totalProjects = 4;
-
-  // btns to switch between projects - they basically +/- the projectNum variable with certain conditions
-  $('.portfolio__btn--left').click(function () {
-
-    if (projectNum === 1) {
-      projectNum = totalProjects;
-    } else {
-      projectNum--;
-    }
-    transitionProjects(projectNum);
-  });
-
-  $('.portfolio__btn--right').click(function () {
-    if (projectNum === totalProjects) {
-      projectNum = 1;
-    } else {
-      projectNum++;
-    }
-    transitionProjects(projectNum);
-  });
-});
-
-// array of project data to be displayed in html template
-let data = [{
-    name: 'News-Views',
-    liveLink: 'https://robp773.github.io/news-views/build/',
-    githubLink: 'https://github.com/Robp773/news-views',
-    screenshotDesktop: 'img/newsviews-desktop3.png',
-    screenshotMobile: 'img/newsviews-mobile2.png',
-    description: 'Search for and compare news coverage from different sources.'
-  },
-  {
-    name: 'Time $pent',
-    liveLink: 'https://tranquil-reef-93096.herokuapp.com/',
-    githubLink: 'https://github.com/Robp773/Time-Spent',
-    screenshotDesktop: 'img/timespent-desktop.png',
-    screenshotMobile: 'img/timespent-mobile.png',
-    description: 'Manage your time the way you manage your money.'
-  },
-  {
-    name: 'Pack Light',
-    liveLink: 'https://awesome-saha-cafdaf.netlify.com/',
-    githubLink: 'https://github.com/Robp773/ultra-light-backpacking-client#live-demo',
-    screenshotDesktop: 'img/packlight-desktop2.png',
-    screenshotMobile: 'img/packlight-mobile.png',
-    description: 'Track and manage your pack\'s weight to achieve ultralight status.'
-  },
-  {
-    name: 'GOT Tracker',
-    liveLink: 'https://robp773.github.io/GOT-Character-Tracker/',
-    githubLink: 'https://github.com/Robp773/GOT-Character-Tracker',
-    screenshotDesktop: 'img/got-desktop.png',
-    screenshotMobile: 'img/got-mobile.png',
-    description: 'Search for information on Game of Thrones Characters.'
-  }
-];
-
-// setting template 
-let setPortfolioContent = (currentNum) => {
-  let dataObj = data[currentNum - 1];
-
-  $('#project-name').text(dataObj.name);
-  $('#live-link').attr('href', dataObj.liveLink);
-  $('#github-link').attr('href', dataObj.githubLink);
-  $('#screenshot-desktop').attr('src', dataObj.screenshotDesktop);
-  $('#screenshot-mobile').attr('src', dataObj.screenshotMobile);
-  $('#description').text(dataObj.description);
-
-};
-// animates the transition between projects and sets the content 
-let transitionProjects = (projectNum) => {
-  $('.portfolio__content').animate({
-    opacity: 0
-  }, 500, function () {
-
-    // console.log(value === data[projectNum].screenshotDesktop)
-    setPortfolioContent(projectNum)
-
-    // an attempt to make sure screenshots load before opacity is restored
-    let waitForAttrs = setInterval(function () {
-      let desktopAttr = $('#screenshot-desktop').attr('src')
-      let mobileAttr = $('#screenshot-mobile').attr('src')
-
-      if (desktopAttr === data[projectNum - 1].screenshotDesktop && mobileAttr === data[projectNum - 1].screenshotMobile) {
-        $('.portfolio__content').animate({
-          opacity: 1
-        }, 750, function () {});
-
-        clearInterval(waitForAttrs)
+    // switching between projects in "project work" section
+    let indexNum = 0;
+    // number of projects - 1
+    let maxIndex = 3
+    let prevVal;
+    // btns to switch between projects - they basically +/- the projectNum variable with certain conditions
+    $('.portfolio__btn--left').click(function () {
+      prevVal = indexNum;
+      if (indexNum === 0) {
+        indexNum = maxIndex;
+      } else {
+        indexNum--;
       }
+      transitionProjects(indexNum, prevVal);
+    });
 
-    }, 100)
-
+    $('.portfolio__btn--right').click(function () {
+      prevVal = indexNum;
+      if (indexNum === maxIndex) {
+        indexNum = 0;
+      } else {
+        indexNum++;
+      }
+      transitionProjects(indexNum, prevVal);
+    });
   });
-};
+
+  $('#time-spent, #pack-light, #got-tracker').hide();
+
+  let projectArray = [
+    'news-views',
+    'pack-light',
+    'time-spent',
+    'got-tracker'
+  ];
+
+  function transitionProjects(indexNum, prevVal) {
+    for (let i = 0; i < projectArray.length; i++) {
+      if (i === indexNum) {
+        $(`#${projectArray[prevVal]}`).fadeOut(500, 'linear', function () {
+          $(`#${projectArray[indexNum]}`).fadeIn(500, 'linear')
+
+        });
+      }
+    }
+  }
+});
