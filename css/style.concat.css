@@ -145,11 +145,17 @@ ORDER: Base + typography > general layout + grid > page layout > components
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  overflow: scroll;
+  overflow-x: hidden; }
+
+::-webkit-scrollbar {
+  width: 0px; }
 
 body {
   box-sizing: border-box;
-  position: relative; }
+  position: relative;
+  font-family: 'Merriweather', sans-serif; }
 
 .icon {
   color: white;
@@ -199,7 +205,6 @@ a {
     width: 100%;
     object-fit: fill; }
   .home__content {
-    font-family: "Rubik", sans-serif;
     font-size: 4rem;
     text-align: center;
     color: white;
@@ -376,7 +381,7 @@ a {
   position: relative;
   overflow: hidden;
   display: flex;
-  border: 1rem solid lightgreen;
+  border: 0.5rem solid lightgreen;
   background: #232526;
   /* fallback for old browsers */
   background: linear-gradient(to right, #232526, #414345, #414345, #232526); }
@@ -388,7 +393,6 @@ a {
 
 .desc {
   display: flex;
-  height: 100%;
   width: 30%;
   flex: none;
   flex-direction: column;
@@ -405,7 +409,6 @@ a {
     margin-top: 5rem;
     text-align: center;
     padding: 1rem;
-    font-family: "Rubik", sans-serif;
     font-size: 5rem;
     display: flex;
     border: 0.5rem solid lightgreen;
@@ -414,6 +417,9 @@ a {
     background: #414345;
     box-shadow: 1rem 0 3rem black;
     transition: 0.5s all; }
+    @media only screen and (max-width: 75em) {
+      .desc__box {
+        font-size: 4rem; } }
     @media only screen and (max-width: 56.25em) {
       .desc__box {
         font-size: 2.25rem;
@@ -431,7 +437,6 @@ a {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  height: 100%;
   font-size: 3rem;
   justify-content: center;
   align-items: center;
@@ -447,14 +452,16 @@ a {
       height: fit-content;
       margin: auto;
       width: 100%; } }
-  @media only screen and (max-width: 75em) {
-    .info-section__h2 {
-      font-size: 3.5rem; } }
-  @media only screen and (max-width: 56.25em) {
-    .info-section__h2 {
-      margin-top: 2rem;
-      font-size: 3rem;
-      text-align: center; } }
+  .info-section__h2 {
+    font-family: "Black Ops One", cursive; }
+    @media only screen and (max-width: 75em) {
+      .info-section__h2 {
+        font-size: 3.5rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .info-section__h2 {
+        margin-top: 2rem;
+        font-size: 3rem;
+        text-align: center; } }
   .info-section__note {
     margin: 3rem;
     font-size: 4rem; }
@@ -623,7 +630,8 @@ a {
       border-bottom: 2px solid transparent; }
     .circle-container > i:hover::before {
       transition: all 1s;
-      animation: underline-fade 1s ease-out, fade-in 0.5s linear; }
+      animation: underline-fade 1s ease-out, fade-in 0.5s linear;
+      font-family: 'Merriweather', sans-serif; }
       @media only screen and (max-width: 37.5em) {
         .circle-container > i:hover::before {
           animation: none; } }
@@ -646,9 +654,9 @@ a {
     .circle-container > i:nth-child(9):hover::before {
       content: "Git"; }
     .circle-container > i:nth-child(10):hover::before {
-      content: "JavaScript"; }
-    .circle-container > i:nth-child(11):hover::before {
       content: "jQuery"; }
+    .circle-container > i:nth-child(11):hover::before {
+      content: "JavaScript"; }
     .circle-container > i:nth-child(12) {
       color: white;
       transition: 1s all; }
@@ -699,7 +707,7 @@ a {
     text-align: center;
     border-radius: 50px;
     box-shadow: 0 1rem 3rem black;
-    border: 1px solid lightgreen;
+    border: 0.5rem solid lightgreen;
     padding: 2rem; }
     @media only screen and (max-width: 56.25em) {
       .portfolio__content {
@@ -742,17 +750,18 @@ a {
     transition: 0.25s all; }
     @media only screen and (max-width: 56.25em) {
       .portfolio__icon {
-        font-size: 5rem; } }
+        font-size: 4rem; } }
     .portfolio__icon:hover {
       color: lightgreen; }
   .portfolio__header {
     width: fit-content;
     margin: 0 auto 2rem auto;
     font-size: 8rem;
-    border-bottom: 2px solid lightgreen; }
+    border-bottom: 0.5rem solid lightgreen; }
     @media only screen and (max-width: 75em) {
       .portfolio__header {
-        font-size: 4.75rem; } }
+        font-size: 4.75rem;
+        border-bottom: 0.25rem solid lightgreen; } }
     @media only screen and (max-width: 56.25em) {
       .portfolio__header {
         font-size: 6rem; } }
@@ -782,7 +791,8 @@ a {
     @media only screen and (max-width: 56.25em) {
       .portfolio__screenshot-desktop {
         width: 100%;
-        margin: auto; } }
+        margin: auto;
+        height: 35vh; } }
   .portfolio__screenshot-mobile {
     width: 20%;
     height: 30%; }

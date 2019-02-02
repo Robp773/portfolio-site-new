@@ -133,6 +133,9 @@
       border-radius: 0;
       width: 100%;
     }
+    &--no-bg{
+      background: transparent;
+    }
   }
 
   &__screenshot-desktop {

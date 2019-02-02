@@ -1,245 +1,348 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Merriweather" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-    <title>Robert Peterman - Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Merriweather" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" />
+  <title>Robert Peterman - Portfolio</title>
 </head>
 
 <body>
+  <div class="home">
+    <div class="home__bg-video">
+      <video class="home__bg-video-content" autoplay muted loop>
+        <source src="img/bg-video.webm" type="video/mp4" />
+        Your browser is not supported!
+      </video>
+    </div>
+    <div class="home__content">
+      <h1 class="home__name">
+        Robert Peterman <br />
+        Fullstack Web Developer
+      </h1>
+      <div class="home__contact-info">
+        <a target="#" href="mailto:robpeterman573@gmail.com">
+          <i class="icon contact fas fa-envelope"></i>
+        </a>
+        <a target="#" href="https://github.com/Robp773">
+          <i class="icon contact fab fa-github"></i>
+        </a>
+        <a target="#" href="https://www.linkedin.com/in/robertpeterman92">
+          <i class="icon contact fab fa-linkedin"></i>
+        </a>
+      </div>
+      <div class="home__portfolio-btn-parent">
+        <button id="downBtn" class="home__portfolio-btn">
+          <div class="text">Portfolio</div>
+          <div class="text-2">Portfolio</div>
+        </button>
 
-    <div class="home">
+        <div class="home__portfolio-btn-bg"></div>
 
-        <div class="home__bg-video">
-            <video class="home__bg-video-content" autoplay muted loop>
-                <source src="img/bg-video.webm" type="video/mp4">
-                Your browser is not supported!
-            </video>
+        <div class="home__portfolio-btn-item home__portfolio-btn-item--1">
+          MongoDB
         </div>
-        <div class="home__content">
-            <h1 class="home__name">Robert Peterman <br /> Fullstack Web Developer</h1>
-            <div class="home__contact-info">
-
-                <a target="#" href="mailto:robpeterman573@gmail.com">
-                    <i class="icon contact fas fa-envelope"></i>
-                </a>
-                <a target="#" href="https://github.com/Robp773">
-                    <i class="icon contact fab fa-github"></i>
-                </a>
-                <a target="#" href="https://www.linkedin.com/in/robertpeterman92">
-                    <i class="icon contact fab fa-linkedin"></i>
-                </a>
-
-            </div>
-            <div class='home__portfolio-btn-parent'>
-
-                <button id="downBtn" class="home__portfolio-btn">
-                    <div class="text">Portfolio</div>
-                    <div class="text-2">Portfolio</div>
-                </button>
-
-                <div class="home__portfolio-btn-bg"></div>
-
-                <div class="home__portfolio-btn-item home__portfolio-btn-item--1">MongoDB</div>
-                <div class="home__portfolio-btn-item home__portfolio-btn-item--2">Express</div>
-                <div class="home__portfolio-btn-item home__portfolio-btn-item--3">React</div>
-                <div class="home__portfolio-btn-item home__portfolio-btn-item--4">Node.js</div>
-                <div class="home__portfolio-btn-item home__portfolio-btn-item--5">JavaScript</div>
-                <div class="home__portfolio-btn-item home__portfolio-btn-item--6">HTML</div>
-                <div class="home__portfolio-btn-item home__portfolio-btn-item--7">CSS</div>
-                <div class="home__portfolio-btn-item home__portfolio-btn-item--8">SASS</div>
-
-            </div>
+        <div class="home__portfolio-btn-item home__portfolio-btn-item--2">
+          Express
         </div>
+        <div class="home__portfolio-btn-item home__portfolio-btn-item--3">
+          React
+        </div>
+        <div class="home__portfolio-btn-item home__portfolio-btn-item--4">
+          Node.js
+        </div>
+        <div class="home__portfolio-btn-item home__portfolio-btn-item--5">
+          JavaScript
+        </div>
+        <div class="home__portfolio-btn-item home__portfolio-btn-item--6">
+          HTML
+        </div>
+        <div class="home__portfolio-btn-item home__portfolio-btn-item--7">
+          CSS
+        </div>
+        <div class="home__portfolio-btn-item home__portfolio-btn-item--8">
+          SASS
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="about">
+    <div class="desc">
+      <h2 id="box-1" class="desc__box focused">About</h2>
+      <h2 id="box-2" class="desc__box">Tech</h2>
+      <h2 id="box-3" class="desc__box">Apps</h2>
+      <h2 id="box-4" class="desc__box">Sites</h2>
     </div>
 
-    <div id='about' class="about">
-
-        <div class="desc">
-
-            <h2 id="box-1" class="desc__box focused">What I do</h2>
-            <h2 id="box-2" class="desc__box">What I Use</h2>
-            <h2 id="box-3" class="desc__box">Projects</h2>
-
+    <div class="info-section">
+      <div class="info-section__box-1 inactive">
+        <h2 class="info-section__h2">
+          I create <span class="u-emphasize">modern</span> and
+          <span class="u-emphasize">responsive</span> web apps.
+        </h2>
+        <div class="info-section__note">
+          With a focus on writing code that is...
         </div>
+        <ul class="info-section__list">
+          <li>
+            <div class="info-section__list-item">
+              <h3>Maintainable</h3>
+              <i class="about-icon about-icon__wrench wrench fas fa-wrench"></i>
+            </div>
+          </li>
 
-        <div class="info-section">
-            <div class="info-section__box-1 inactive">
-                <h2 class="info-section__h2">I create
-                    <span class="u-emphasize">modern</span> and
-                    <span class="u-emphasize">responsive</span>
-                    web apps.
+          <li>
+            <div class="info-section__list-item">
+              <h3>Efficient</h3>
+              <i class="about-icon about-icon__cog fas fa-cog"></i>
+            </div>
+          </li>
+
+          <li>
+            <div class="info-section__list-item">
+              <h3>Modular</h3>
+              <i class="about-icon about-icon__puzzle fas fa-puzzle-piece"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="info-section__box-2 inactive">
+        <div class="used-tech">
+          <div class="circle-container">
+            <i class="devicon-mongodb-plain"></i>
+            <i class="devicon-express-original"></i>
+            <i class="devicon-react-original"></i>
+            <i class="devicon-nodejs-plain"></i>
+            <i class="devicon-angularjs-plain"></i>
+            <i class="devicon-sass-original"></i>
+            <i class="devicon-css3-plain"></i>
+            <i class="devicon-html5-plain"></i>
+            <i class="devicon-git-plain"></i>
+            <i class="devicon-jquery-plain"></i> <i class="fab fa-js"></i>
+            <i class="fas fa-toolbox">
+              <div class="animation-div"></div>
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-section__box-3 inactive">
+        <div class="modal">
+          <div class="modal__bg"></div>
+          <img class="modal__active-image" />
+          <button class="modal__exit-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="portfolio">
+          <button class="non-mobile-btn portfolio__btn portfolio__btn--left">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div class="portfolio__content">
+            <div id="news-views" class="portfolio__item-parent">
+              <div class="portfolio__header-parent">
+                <a target="#" id="live-link" href="https://robp773.github.io/news-views/build/">
+                  <i class="portfolio__icon fas fa-link"></i>
+                </a>
+                <h2 id="project-name" class="portfolio__header">
+                  News Views
                 </h2>
-                <div class="info-section__note">With a focus on writing code that is...</div>
-                <ul class="info-section__list">
+                <a target="#" id="github-link" href="https://github.com/Robp773/news-views">
+                  <i class="portfolio__icon devicon-github-plain"></i>
+                </a>
+              </div>
 
-                    <li>
-                        <div class="info-section__list-item">
-                            <h3>Maintainable</h3>
-                            <i class="about-icon about-icon__wrench wrench fas fa-wrench"></i>
-                        </div>
-                    </li>
+              <div class="portfolio__screenshots-parent">
+                <img id="screenshot-desktop" class="portfolio__screenshot-desktop" src="img/newsviews-desktop3.png" />
+                <img id="screenshot-mobile" class="portfolio__screenshot-mobile" src="img/newsviews-mobile2.png" />
+              </div>
 
-                    <li>
-                        <div class="info-section__list-item">
-                            <h3>Efficient</h3>
-                            <i class="about-icon about-icon__cog fas fa-cog"></i>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="info-section__list-item">
-                            <h3>Modular</h3>
-                            <i class="about-icon about-icon__puzzle fas fa-puzzle-piece"></i>
-                        </div>
-                    </li>
-                </ul>
+              <div id="description" class="portfolio__desc">
+                Search for and compare news coverage from different sources.
+              </div>
             </div>
 
-            <div class="info-section__box-2 inactive">
-                <div class="used-tech">
+            <div id="got-tracker" class="portfolio__item-parent">
+              <div class="portfolio__header-parent">
+                <a target="#" id="live-link" href="https://robp773.github.io/GOT-Character-Tracker/">
+                  <i class="portfolio__icon fas fa-link"></i>
+                </a>
+                <h2 id="project-name" class="portfolio__header">
+                  GOT Tracker
+                </h2>
+                <a target="#" id="github-link" href="https://github.com/Robp773/GOT-Character-Tracker">
+                  <i class="portfolio__icon devicon-github-plain"></i>
+                </a>
+              </div>
 
-                    <div class='circle-container'>
-                        <i class="devicon-mongodb-plain"></i>
-                        <i class="devicon-express-original"></i>
-                        <i class="devicon-react-original"></i>
-                        <i class="devicon-nodejs-plain"></i>
-                        <i class="devicon-angularjs-plain"></i>
-                        <i class="devicon-sass-original"></i>
-                        <i class="devicon-css3-plain"></i>
-                        <i class="devicon-html5-plain"></i>
-                        <i class="devicon-git-plain"></i>
-                        <i class="devicon-jquery-plain"></i>
-                        <i class="fab fa-js"></i>
-                        <i class="fas fa-toolbox">
-                            <div class="animation-div"></div>
-                        </i>
-                    </div>
-                </div>
+              <div class="portfolio__screenshots-parent">
+                <img id="screenshot-desktop" class="portfolio__screenshot-desktop" src="img/got-desktop.png" />
+                <img id="screenshot-mobile" class="portfolio__screenshot-mobile" src="img/got-mobile.png" />
+              </div>
+
+              <div id="description" class="portfolio__desc">
+                Search for information on Game of Thrones Characters.
+              </div>
             </div>
 
+            <div id="pack-light" class="portfolio__item-parent">
+              <div class="portfolio__header-parent">
+                <a target="#" id="live-link" href="https://awesome-saha-cafdaf.netlify.com/">
+                  <i class="portfolio__icon fas fa-link"></i>
+                </a>
+                <h2 id="project-name" class="portfolio__header">
+                  Pack Light
+                </h2>
+                <a target="#" id="github-link" href="https://github.com/Robp773/ultra-light-backpacking-client#live-demo">
+                  <i class="portfolio__icon devicon-github-plain"></i>
+                </a>
+              </div>
 
-            <div class="info-section__box-3 inactive">
-                <div class="modal">
-                    <div class="modal__bg"></div>
-                    <img class="modal__active-image" />
-                    <button class="modal__exit-btn"><i class="fas fa-times"></i></button>
-                </div>
-                <div class="portfolio">
-                    <button class="non-mobile-btn portfolio__btn portfolio__btn--left"><i class="fas fa-chevron-left"></i></button>
+              <div class="portfolio__screenshots-parent">
+                <img id="screenshot-desktop" class="portfolio__screenshot-desktop" src="img/packlight-desktop2.png" />
+                <img id="screenshot-mobile" class="portfolio__screenshot-mobile" src="img/packlight-mobile.png" />
+              </div>
 
-                    <div class="portfolio__content">
-                        <div id='news-views' class="portfolio__item-parent">
-
-                            <div class="portfolio__header-parent">
-                                <a target="#" id="live-link" href='https://robp773.github.io/news-views/build/'>
-                                    <i class="portfolio__icon fas fa-link"></i>
-                                </a>
-                                <h2 id="project-name" class="portfolio__header">News Views</h2>
-                                <a target="#" id="github-link" href='https://github.com/Robp773/news-views'>
-                                    <i class="portfolio__icon devicon-github-plain"></i>
-                                </a>
-                            </div>
-
-                            <div class="portfolio__screenshots-parent">
-                                <img id="screenshot-desktop" class="portfolio__screenshot-desktop" src="img/newsviews-desktop3.png" />
-                                <img id="screenshot-mobile" class="portfolio__screenshot-mobile" src="img/newsviews-mobile2.png" />
-                            </div>
-
-                            <div id="description" class="portfolio__desc">Search for and compare news coverage from
-                                different sources.</div>
-
-                        </div>
-
-                        <div id='got-tracker' class="portfolio__item-parent">
-
-                            <div class="portfolio__header-parent">
-                                <a target="#" id="live-link" href='https://robp773.github.io/GOT-Character-Tracker/'>
-                                    <i class="portfolio__icon fas fa-link"></i>
-                                </a>
-                                <h2 id="project-name" class="portfolio__header">GOT Tracker</h2>
-                                <a target="#" id="github-link" href='https://github.com/Robp773/GOT-Character-Tracker'>
-                                    <i class="portfolio__icon devicon-github-plain"></i>
-                                </a>
-                            </div>
-
-                            <div class="portfolio__screenshots-parent">
-                                <img id="screenshot-desktop" class="portfolio__screenshot-desktop" src="img/got-desktop.png" />
-                                <img id="screenshot-mobile" class="portfolio__screenshot-mobile" src="img/got-mobile.png" />
-                            </div>
-
-                            <div id="description" class="portfolio__desc">Search for information on Game of Thrones
-                                Characters.</div>
-
-                        </div>
-
-
-                        <div id='pack-light' class="portfolio__item-parent">
-
-                            <div class="portfolio__header-parent">
-                                <a target="#" id="live-link" href='https://awesome-saha-cafdaf.netlify.com/'>
-                                    <i class="portfolio__icon fas fa-link"></i>
-                                </a>
-                                <h2 id="project-name" class="portfolio__header">Pack Light</h2>
-                                <a target="#" id="github-link" href='https://github.com/Robp773/ultra-light-backpacking-client#live-demo'>
-                                    <i class="portfolio__icon devicon-github-plain"></i>
-                                </a>
-                            </div>
-
-                            <div class="portfolio__screenshots-parent">
-                                <img id="screenshot-desktop" class="portfolio__screenshot-desktop" src="img/packlight-desktop2.png" />
-                                <img id="screenshot-mobile" class="portfolio__screenshot-mobile" src="img/packlight-mobile.png" />
-                            </div>
-
-                            <div id="description" class="portfolio__desc">Track and manage your pack's weight to
-                                achieve
-                                ultralight status.</div>
-
-                        </div>
-
-                        <div id='time-spent' class="portfolio__item-parent">
-
-                            <div class="portfolio__header-parent">
-                                <a target="#" id="live-link" href='https://tranquil-reef-93096.herokuapp.com/'>
-                                    <i class="portfolio__icon fas fa-link"></i>
-                                </a>
-                                <h2 id="project-name" class="portfolio__header">Time $pent</h2>
-                                <a target="#" id="github-link" href='https://github.com/Robp773/Time-Spent'>
-                                    <i class="portfolio__icon devicon-github-plain"></i>
-                                </a>
-                            </div>
-
-                            <div class="portfolio__screenshots-parent">
-                                <img id="screenshot-desktop" class="portfolio__screenshot-desktop" src="img/timespent-desktop.png" />
-                                <img id="screenshot-mobile" class="portfolio__screenshot-mobile" src="img/timespent-mobile.png" />
-                            </div>
-
-                            <div id="description" class="portfolio__desc">Manage your time the way you manage your
-                                money.</div>
-
-                        </div>
-
-                    </div>
-
-                    <button class="non-mobile-btn portfolio__btn portfolio__btn--right"><i class="fas fa-chevron-right"></i></button>
-                    <div class="portfolio__mobile-nav">
-                        <button class="mobile-btn portfolio__btn portfolio__btn--left"><i class="fas fa-chevron-left"></i></button>
-                        <button class="mobile-btn portfolio__btn portfolio__btn--right"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
+              <div id="description" class="portfolio__desc">
+                Track and manage your pack's weight to achieve ultralight
+                status.
+              </div>
             </div>
+
+            <div id="time-spent" class="portfolio__item-parent">
+              <div class="portfolio__header-parent">
+                <a target="#" id="live-link" href="https://tranquil-reef-93096.herokuapp.com/">
+                  <i class="portfolio__icon fas fa-link"></i>
+                </a>
+                <h2 id="project-name" class="portfolio__header">
+                  Time $pent
+                </h2>
+                <a target="#" id="github-link" href="https://github.com/Robp773/Time-Spent">
+                  <i class="portfolio__icon devicon-github-plain"></i>
+                </a>
+              </div>
+
+              <div class="portfolio__screenshots-parent">
+                <img id="screenshot-desktop" class="portfolio__screenshot-desktop" src="img/timespent-desktop.png" />
+                <img id="screenshot-mobile" class="portfolio__screenshot-mobile" src="img/timespent-mobile.png" />
+              </div>
+
+              <div id="description" class="portfolio__desc">
+                Manage your time the way you manage your money.
+              </div>
+            </div>
+          </div>
+
+          <button class="non-mobile-btn portfolio__btn portfolio__btn--right">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <div class="portfolio__mobile-nav">
+            <button class="mobile-btn portfolio__btn portfolio__btn--left">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="mobile-btn portfolio__btn portfolio__btn--right">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+
         </div>
-    </div>
+      </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="index.js"></script>
+
+
+
+      <div class="info-section__box-4 inactive websites">
+
+        <div class="modal">
+          <div class="modal__bg"></div>
+          <img class="modal__active-image" />
+          <button class="modal__exit-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+
+
+        <div class="portfolio">
+          <button class="non-mobile-btn portfolio__btn websites__btn--left">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div id="httan" class="portfolio__content">
+            <div class="portfolio__header-parent">
+              <a target="#" id="live-link" href="https://gallant-booth-8ff8af.netlify.com/">
+                <i class="portfolio__icon fas fa-link"></i>
+              </a>
+              <h2 id="project-name" class="portfolio__header">
+                Mindfulness Website
+              </h2>
+              <a target="#" id="github-link" href="https://github.com/Robp773/HTTAN-site">
+                <i class="portfolio__icon devicon-github-plain"></i>
+              </a>
+            </div>
+
+            <div class="portfolio__screenshots-parent portfolio__screenshots-parent--no-bg">
+              <img id="screenshot-desktop" class="portfolio__screenshot-desktop" src="img/httan-desktop.png" />
+            </div>
+
+            <div id="description" class="portfolio__desc">
+              Minimalist styled homepage. Made for a local yoga teacher to teach visitors about mindfulness.
+            </div>
+          </div>
+
+          <div id="ovb" class="portfolio__content">
+            <div class="portfolio__header-parent">
+              <a target="#" id="live-link" href="https://onevoicebasketball.com/">
+                <i class="portfolio__icon fas fa-link"></i>
+              </a>
+              <h2 id="project-name" class="portfolio__header">
+                One Voice Basketball
+              </h2>
+              <a target="#" id="github-link" href="https://github.com/Robp773/one-voice-basketball">
+                <i class="portfolio__icon devicon-github-plain"></i>
+              </a>
+            </div>
+
+            <div class="portfolio__screenshots-parent portfolio__screenshots-parent--no-bg">
+              <img id="screenshot-desktop" class="portfolio__screenshot-desktop" src="img/ovb-desktop.jpg" />
+              <!-- <img id="screenshot-mobile" class="portfolio__screenshot-mobile" src="img/timespent-mobile.png" /> -->
+            </div>
+
+            <div id="description" class="portfolio__desc">
+              WordPress powered website for a local basketball organization.
+            </div>
+          </div> <button class="non-mobile-btn portfolio__btn websites__btn--right">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <div class="portfolio__mobile-nav">
+            <button class="mobile-btn portfolio__btn websites__btn--left">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="mobile-btn portfolio__btn websites__btn--right">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="index.js"></script>
 </body>
 
 </html>

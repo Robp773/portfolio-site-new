@@ -12,6 +12,7 @@ $(document).ready(function () {
   // variable to track if scroll down animation has already been triggered
   let scrollTriggered = false;
   $(window).scroll(function () {
+    console.log($(window).scrollTop())
     if ($(window).scrollTop() >= $(window).height() / 6) {
       // if it has been triggered, prevent animations
       if (scrollTriggered) {
@@ -42,8 +43,8 @@ $(document).ready(function () {
   });
 
   // switch between tabs in about section
-  $('#box-1, #box-2, #box-3').click(function (e) {
-    let boxArray = ['box-1', 'box-2', 'box-3'];
+  $('#box-1, #box-2, #box-3, #box-4').click(function (e) {
+    let boxArray = ['box-1', 'box-2', 'box-3', 'box-4'];
     for (let i = 0; i < boxArray.length; i++) {
       // if current array value does not match target id
       if (e.currentTarget.id !== boxArray[i]) {
@@ -61,10 +62,25 @@ $(document).ready(function () {
     }
 
     // switching between projects in "project work" section
+    let projectArray = [
+      'news-views',
+      'pack-light',
+      'time-spent',
+      'got-tracker'
+    ];
+    $('#time-spent, #pack-light, #got-tracker').hide();
+
     let indexNum = 0;
-    // number of projects - 1
-    let maxIndex = 3
+    let maxIndex = projectArray.length - 1;
     let prevVal;
+
+    $('#box-1, #box-2, #box-4').on('click', function () {
+      $(`#${projectArray[indexNum]}`).hide();
+      prevVal = null;
+      indexNum = 0;
+      $(`#${projectArray[indexNum]}`).show();
+    })
+
     // btns to switch between projects - they basically +/- the projectNum variable with certain conditions
     $('.portfolio__btn--left').click(function () {
       prevVal = indexNum;
@@ -73,7 +89,7 @@ $(document).ready(function () {
       } else {
         indexNum--;
       }
-      transitionProjects(indexNum, prevVal);
+      transitionProjects(indexNum, prevVal, projectArray);
     });
 
     $('.portfolio__btn--right').click(function () {
@@ -83,27 +99,50 @@ $(document).ready(function () {
       } else {
         indexNum++;
       }
-      transitionProjects(indexNum, prevVal);
+      transitionProjects(indexNum, prevVal, projectArray);
     });
   });
 
-  $('#time-spent, #pack-light, #got-tracker').hide();
 
-  let projectArray = [
-    'news-views',
-    'pack-light',
-    'time-spent',
-    'got-tracker'
+  let sitesArray = [
+    'ovb',
+    'httan'
   ];
 
-  function transitionProjects(indexNum, prevVal) {
-    for (let i = 0; i < projectArray.length; i++) {
-      if (i === indexNum) {
-        $(`#${projectArray[prevVal]}`).fadeOut(500, 'linear', function () {
-          $(`#${projectArray[indexNum]}`).fadeIn(500, 'linear')
+  let indexSiteNum = 0;
+  let maxSiteIndex = sitesArray.length - 1;
+  let prevSiteVal;
 
+  $('#httan').hide();
+
+  $('.websites__btn--left').click(function () {
+    prevSiteVal = indexSiteNum;
+    if (indexSiteNum === 0) {
+      indexSiteNum = maxSiteIndex;
+    } else {
+      indexSiteNum--;
+    }
+    transitionProjects(indexSiteNum, prevSiteVal, sitesArray);
+  });
+
+  $('.websites__btn--right').click(function () {
+    prevSiteVal = indexSiteNum;
+    if (indexSiteNum === maxSiteIndex) {
+      indexSiteNum = 0;
+    } else {
+      indexSiteNum++;
+    }
+    transitionProjects(indexSiteNum, prevSiteVal, sitesArray);
+  });
+
+  function transitionProjects(indexNum, prevVal, usedArray) {
+    for (let i = 0; i < usedArray.length; i++) {
+      if (i === indexNum) {
+        $(`#${usedArray[prevVal]}`).fadeOut(500, 'linear', function () {
+          $(`#${usedArray[indexNum]}`).fadeIn(500, 'linear')
         });
       }
     }
   }
+
 });

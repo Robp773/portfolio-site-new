@@ -1,0 +1,41 @@
+.websites {
+  width: 100%;
+  flex-direction: row;
+
+  &__parent {
+    width: 50vw;
+    background: black;
+    height: fit-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  &__btn {
+    border: 0;
+    outline: none;
+    font-size: 5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    background: white;
+    height: 40rem;
+    border-radius: 100px;
+    box-shadow: 0 1rem 3rem black;
+
+    &:active {
+      @include respond(tab-port) {
+        box-shadow: none;
+      }
+
+      box-shadow: 0 0.5rem 4rem black;
+    }
+
+    &:active>i {
+      color: $primary-color;
+    }
+  }
+}
