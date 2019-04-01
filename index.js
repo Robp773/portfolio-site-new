@@ -63,12 +63,13 @@ $(document).ready(function () {
 
     // switching between projects in "project work" section
     let projectArray = [
+      'dashboard',
       'news-views',
       'pack-light',
       'time-spent',
-      'got-tracker'
+      
     ];
-    $('#time-spent, #pack-light, #got-tracker').hide();
+    $('#time-spent, #pack-light, #news-views').hide();
 
     let indexNum = 0;
     let maxIndex = projectArray.length - 1;
